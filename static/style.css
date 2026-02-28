@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f4f6f8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 50px 60px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    width: 400px;
+    transition: 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-4px);
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #1d3557;
+    font-weight: 600;
+}
+
+#timer {
+    font-size: 56px;
+    font-weight: bold;
+    margin: 25px 0;
+    color: #e63946;
+    letter-spacing: 2px;
+}
+
+#status {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+button {
+    padding: 12px 22px;
+    margin: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Start Button */
+#startBtn {
+    background-color: #457b9d;
+    color: white;
+}
+
+#startBtn:hover {
+    background-color: #35607a;
+}
+
+/* Submit Button */
+#submitBtn {
+    background-color: #1d3557;
+    color: white;
+}
+
+#submitBtn:hover {
+    background-color: #14213d;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background-color: #cccccc !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
