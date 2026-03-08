@@ -38,7 +38,7 @@ def start_timer():
 
     # Create new timer
     start_time = datetime.utcnow()
-    end_time = start_time + timedelta(minutes=30)
+    end_time = start_time + timedelta(minutes=40)
 
     new_timer = TimerSession(
         session_id=session_id,
@@ -53,7 +53,7 @@ def start_timer():
     db.session.commit()
 
     return jsonify({
-        "remaining_time": 1800,
+        "remaining_time": 2400,
         "status": "running"
     })
 
