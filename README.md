@@ -34,7 +34,7 @@ This system is ideal for:
 ## ✨ Features
 
 ### Core Timer Functionality
-- **30-minute per-question timer**: Each question gets a dedicated 30-minute time slot
+- **40-minute per-question timer**: Each question gets a dedicated 40-minute time slot
 - **Real-time countdown synced with backend**: Timer display updates every second with backend validation
 - **Auto-submit on expiry**: Automatically submits answers when time runs out
 - **Resume timer on page refresh**: Maintains timer state even if the page is refreshed or browser crashes
@@ -123,13 +123,6 @@ Creating a virtual environment is recommended to isolate project dependencies:
 python -m venv venv
 venv\Scripts\activate
 ```
-
-**On Windows (PowerShell):**
-```bash
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
 **On macOS/Linux:**
 ```bash
 python3 -m venv venv
@@ -192,7 +185,7 @@ pip list
    ```
 
 4. **You should see the Assessment Timer interface** with:
-   - Timer display showing "30:00"
+   - Timer display showing "40:00"
    - "Start Timer" button (blue)
    - "Submit Answer" button (dark)
    - Status text area
@@ -200,7 +193,7 @@ pip list
 ### Using the Timer
 
 1. **Click "Start Timer"**
-   - Timer begins countdown from 30:00
+   - Timer begins countdown from 40:00
    - Backend creates a timer session and stores the end time
    - Start button becomes disabled
    - Timer display updates every second
@@ -255,13 +248,13 @@ The backend provides three main REST API endpoints:
 **Response (Success - 200):**
 ```json
 {
-    "remaining_time": 1800,
+    "remaining_time": 2400,
     "status": "running"
 }
 ```
 
 **Response Details:**
-- `remaining_time`: Time in seconds (1800 = 30 minutes)
+- `remaining_time`: Time in seconds (2400 = 40 minutes)
 - `status`: Current timer status ("running")
 
 ---
@@ -401,7 +394,7 @@ Table: timer_session
    ↓
 4. startTimer() Frontend → POST /timer/start Backend
    ↓
-5. Backend: Create TimerSession (end_time = now + 30 min)
+5. Backend: Create TimerSession (end_time = now + 40 min)
    ↓
 6. Frontend: Receives remaining_time, disables Start button
    ↓
@@ -513,7 +506,7 @@ curl -X POST http://localhost:5000/timer/start \
 ## Changelog
 
 ### Version 1.0.0 (Initial Release)
-- ✅ Core timer functionality (30 minutes per question)
+- ✅ Core timer functionality (40 minutes per question)
 - ✅ Real-time backend synchronization
 - ✅ Auto-submit on expiry
 - ✅ Warning alerts (5 min & 1 min)
